@@ -1,0 +1,13 @@
+img{
+      border-radius: 20px solid #ccc;
+}
+
+.footer{
+      background: #4286f4;
+      padding: 40px;
+      color:white;
+
+}
+.footer .contenido{
+      margin-left:70px;
+}

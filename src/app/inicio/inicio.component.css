@@ -1,0 +1,43 @@
+img{
+      border: 20px solid #4286f4;
+}
+h1{
+      font-size: 29px;
+      color:#4286f4;
+      
+}
+p{
+      font-size: 16px;
+      text-align: justify;
+}
+li{
+      font-size: 16px;
+      margin-top: 15px;
+}
+
+.imagenes img {
+      border: 1px solid rgba(1, 1, 1, 0.2);
+      padding: 5px;
+      width: 220px;
+      height: 209px;
+}
+hr{
+      border: 4px solid  #ccc;
+}
+.sidebar{
+      background: #4286f4;
+}
+.sidebar p  {
+      text-align: center;
+      font-size: 50px;
+}
+.sidebar {
+      text-align: center;
+      color: #fff;
+      font-size: 17px;
+}
+.sidebar img {
+      
+      width: 100%;
+      padding: 20px;
+}

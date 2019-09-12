@@ -1,0 +1,93 @@
+<h2>Contacto</h2>
+<div class="row">
+  <div class="col-md-4">
+    <form #forContacto="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="c_usuario.nombre" placeholder="Enter your name"
+          class="form-control" required pattern="[a-zA-Z]+" autocomplete="off">
+        <div class="alert alert-secondary" role="alert" *ngIf="nombre.touched &&  !apellido.valid">Ingrese un Nombre
+          valido por favor</div>
+
+      </div>
+      <div class="form-group">
+        <input type="text" name="apellido" placeholder="Enter your last-name" class="form-control" #apellido="ngModel"
+          required pattern="[a-zA-Z]+" [(ngModel)]="c_usuario.apellido">
+
+        <div class="alert alert-secondary" role="alert" *ngIf="apellido.touched &&  !apellido.valid">Ingrese un apellido
+          por favor</div>
+      </div>
+      <div class="form-group">
+        <input type="text" name="email" placeholder="Enter your email" class="form-control" #email="ngModel"
+          [(ngModel)]="c_usuario.email">
+      </div>
+      <div class="form-group">
+        <label for="">Ingrese su mensaje</label>
+        <textarea name="mensaje" id="" cols="30" class="form-control" #mensaje="ngModel"
+          [(ngModel)]="c_usuario.mensaje"></textarea>
+      </div>
+      <input type="submit" value="Submit" class="btn btn-block btn-info">
+    </form>
+    <br><br>
+  </div>
+
+
+  <!-- Este es el formualrio que esta alado -->
+  <div class="col-md-4">
+
+    <form #formLogin="ngForm" (ngSubmit)="onSubmitLogin(formLogin)">
+
+      <div class="form-group">
+        <input type="text" name="user" #user="ngModel" placeholder="Enter your name" class="form-control"
+          autocomplete="off" [(ngModel)]="user_pass.user" required>
+      </div>
+      <div class="alert alert-danger" *ngIf="!user.valid && user.touched ">Debes llenar este campo</div>
+
+
+      <div class="form-group">
+        <input type="text" name="password" #pass="ngModel" placeholder="Enter your user" class="form-control"
+          [(ngModel)]="user_pass.password" required pattern="[a-zA-Z]+">
+      </div>
+
+      <div class="alert alert-danger" *ngIf="!pass.valid && pass.touched ">Debes llenar este correctamente</div>
+
+      <div class="form-group">
+        <input type="text" name="imagen" placeholder="Ingrese imagen" [(ngModel)]="user_pass.imagen"
+          class="form-control">
+        <img src="{{user_pass.imagen}}" alt="">
+      </div>
+      <input type="submit" value="Submit" class="btn btn-block btn-info" [disabled]="!formLogin.form.valid">
+    </form>
+
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="col-md-4">
+    <table class="table table-striped ">
+      <tr class="text-uppercase">
+        <td>Nombre</td>
+        <td>apellid</td>
+        <td>email</td>
+        <td>mensaje</td>
+      </tr>
+
+      <tr *ngFor="let user of usuarios">
+        <td>{{user.nombre}}</td>
+        <td>{{user.apellido}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.mensaje}}</td>
+      </tr>
+      
+    </table>
+  </div>
+</div> -->
+
+
+
+
+
+<input class="form-control" type="text" [(ngModel)]="userId" (keyup.enter)="cargarUsuario()">
+<div *ngIf="traidos">
+  <p>nombre: {{ traidos.first_name}} <br> Correo : {{traidos.email}}</p>
+  <img src="{{traidos.avatar}}" width="200">
+</div>

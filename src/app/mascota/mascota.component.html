@@ -1,0 +1,42 @@
+<br>
+<div class="container">
+      <div class="row">
+            <h2>Lista de Mascotas Registradas</h2>
+            <div class="col-md-8 mt-4">
+                  <ul class="list-group">
+                        <li *ngFor="let employe of employeArray" class="list-group-item-action list-group-item"
+                              (click)="openForId(employe)" [class.active]="employe==selectedEmployee">
+
+                              <span
+                                    class="badge badge-primary">{{employe.id }} -</span>{{employe.name}}-{{employe.country}}
+                        </li>
+                  </ul>
+                  <div class="card mt-3">
+                        <div class="card-body">
+                              <div class="card-title">
+                                    Insertar Nuevo registro de Mascota
+                              </div>
+                              <div class="form-group">
+                                    <input type="text" name="" placeholder="Insert a Nombre del dueño" class="form-control" id=""
+                                          [(ngModel)]="selectedEmployee.name" autofocus>
+
+                              </div>
+                              <div class="form-group">
+                                    <input type="text" name="" placeholder="Inserte nombre de la mascota" class="form-control" id=""
+                                          [(ngModel)]="selectedEmployee.country" class="form-control">
+                              </div>
+                              <button (click)="addOrEddit()" class="btn btn-primary">
+                                    Registrar Mascota
+                              </button>
+                              <button *ngIf="selectedEmployee.id!==0" class="btn btn-danger"
+                                    (click)="delete()">Eliminar</button>
+                        </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                  <br>
+                  <img width="350" height="250" 
+                        src="assets/imagenes/perrito2.jpeg">
+            </div>
+      </div>
+</div>

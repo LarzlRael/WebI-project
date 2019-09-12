@@ -1,0 +1,21 @@
+<h3>Visitanos mañana para ver esta sección</h3>
+<li *ngIf="nombre">
+      el nombre ingresado es : {{ nombre }}
+      esta persona tiene la cantidad de seguidores de : {{ seguidores }}
+</li>
+
+<button (click)="redirigir()">llevame a la index</button>
+<h1> {{ name | lowercase }}</h1>
+<hr>
+<h3>{{fecha |date:'dd-mm-yyyy' }}</h3>
+<div class="list-group">
+      <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+      <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+      <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+      <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+</div>
+{{25 | raiz_cuadrada}}
+<h4>la potencia de 5 es :  {{5 | pot}} </h4>
+<h4> La pipe del for : {{5 | saludo}}</h4>
+
+<hr>
